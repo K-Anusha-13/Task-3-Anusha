@@ -1,141 +1,90 @@
-# Task-3-Database Integration (TaskFlow API)
+# Task-3 - Database Integration (TaskFlow API)
 
-TaskFlow API is a backend application. It uses Node.js, Express.js and MySQL. This project shows how to connect to a database perform CRUD operations keep data safe design a database schema and communicate with the database securely.
+TaskFlow API is a RESTful backend application built using Node.js, Express.js, and MySQL. This project demonstrates database integration, CRUD operations, schema design, data persistence, and secure database communication using parameterized queries.
 
 ## Features
 
-* MySQL Database Connection
-
+* MySQL Database Integration
 * Create Tasks
-
-* Get Tasks
-
-* Get Task by ID
-
+* Retrieve Tasks
+* Retrieve Task by ID
 * Update Tasks
-
 * Delete Tasks
-
-* API Design
-
-* Prevent SQL Injection
-
-* JSON Responses
+* RESTful API Design
+* SQL Injection Prevention
+* Structured JSON Responses
 
 ## Technologies Used
 
 * Node.js
-
 * Express.js
-
 * MySQL
-
 * MySQL Workbench
-
 * MySQL2
-
 * JavaScript
-
 * Postman
 
 ## Project Structure
 
 ```text
-
 Task-3/
-
 ├── config/
-
-│ └── db.js
-
+│   └── db.js
 ├── controllers/
-
-│ └── taskController.js
-
+│   └── taskController.js
 ├── routes/
-
-│ └── taskRoutes.js
-
+│   └── taskRoutes.js
 ├── database/
-
-│ └── schema.sql
-
+│   └── schema.sql
 ├── Output Screenshots/
-
-├──.env
-
+├── .env
 ├── server.js
-
 ├── package.json
-
 └── README.md
-
 ```
 
 ## Database Schema
 
 ### Tasks Table
 
-| Field | Type |
-
-| ----------- | ----------------- |
-
-| id | INT (Primary Key)
-
-| title | VARCHAR(255)
-
-| description | TEXT |
-
-| status | ENUM |
-
-| created_at | TIMESTAMP |
+| Field       | Type         | Description                     |
+| ----------- | ------------ | ------------------------------- |
+| id          | INT          | Primary Key, Auto Increment     |
+| title       | VARCHAR(255) | Task Title                      |
+| description | TEXT         | Task Description                |
+| status      | ENUM         | Pending, In Progress, Completed |
+| created_at  | TIMESTAMP    | Creation Date & Time            |
 
 ## API Endpoints
 
 ### Tasks
 
-* GET /api/tasks to get all tasks
-
-* GET /api/tasks/:id to get a task by ID
-
-* POST /api/tasks to create a task
-
-* PUT /api/tasks/:id to update a task
-
-* DELETE /api/tasks/:id to delete a task
+* GET /api/tasks - Retrieve all tasks
+* GET /api/tasks/:id - Retrieve a task by ID
+* POST /api/tasks - Create a new task
+* PUT /api/tasks/:id - Update an existing task
+* DELETE /api/tasks/:id - Delete a task
 
 ## Example of Creating a Task
 
-* Send a POST request to /api/tasks with the following JSON data:
+Send a POST request to `/api/tasks` with the following JSON data:
 
 ```json
-
 {
-
-"title": "Project 3"
-
-"description": "Database Integration"
-
+  "title": "Project 3",
+  "description": "Database Integration"
 }
-
 ```
 
 ## Example Response
 
 ```json
-
 {
-
-"id": 1
-
-"title": "Project 3"
-
-"description": "Database Integration"
-
-"status": "Pending"
-
+  "id": 1,
+  "title": "Project 3",
+  "description": "Database Integration",
+  "status": "Pending"
 }
-
 ```
 
 ## API Demonstration
@@ -144,59 +93,50 @@ Task-3/
 
 The application successfully starts and establishes a connection with the MySQL database.
 
-![Application Startup](Output%20Screenshots/Output.png)
+![Application Startup](Task-3/Output%20Screenshots/Output.png)
 
 ### Create Task Endpoint
 
-To create a new task, send a POST request to `/api/tasks`.
+Creates a new task by sending a POST request to `/api/tasks`.
 
-![Create Task](Output%20Screenshots/POST%20api-tasks.png)
+![Create Task](Task-3/Output%20Screenshots/POST%20api-tasks.png)
 
 ### Retrieve All Tasks Endpoint
 
-To retrieve all tasks, send a GET request to `/api/tasks`.
+Retrieves all tasks stored in the database using a GET request to `/api/tasks`.
 
-![Retrieve Tasks](Output%20Screenshots/GET%20api-tasks.png)
+![Retrieve Tasks](Task-3/Output%20Screenshots/GET%20api-tasks.png)
 
 ### Retrieve Task By ID Endpoint
 
-To retrieve a specific task, send a GET request to `/api/tasks/:id`.
+Retrieves a specific task using a GET request to `/api/tasks/:id`.
 
-![Retrieve Task By ID](Output%20Screenshots/GET%20api-tasks-id.png)
+![Retrieve Task By ID](Task-3/Output%20Screenshots/GET%20api-tasks-id.png)
 
 ### Update Task Endpoint
 
-To update an existing task, send a PUT request to `/api/tasks/:id`.
+Updates an existing task using a PUT request to `/api/tasks/:id`.
 
-![Update Task](Output%20Screenshots/PUT%20api-tasks-id.png)
+![Update Task](Task-3/Output%20Screenshots/PUT%20api-tasks-id.png)
 
 ### Delete Task Endpoint
 
-To delete a task, send a DELETE request to `/api/tasks/:id`.
+Deletes a task using a DELETE request to `/api/tasks/:id`.
 
-![Delete Task](Output%20Screenshots/DELETE%20api-tasks-id.png)
-
-
+![Delete Task](Task-3/Output%20Screenshots/DELETE%20api-tasks-id.png)
 
 ## Important Concepts Learned
 
-* Connecting to a database
-
-* Designing a MySQL schema
-
-* Performing CRUD operations
-
-* Building RESTful APIs
-
-* Using keys
-
-* Persisting data
-
-* Using environment variables
-
-* Preventing SQL injection
-
-* Building an architecture
+* Database Integration
+* MySQL Schema Design
+* CRUD Operations
+* RESTful API Development
+* Primary Keys and Database Constraints
+* Data Persistence
+* Environment Variables
+* Parameterized Queries
+* SQL Injection Prevention
+* Modular Backend Architecture
 
 ## Author
 
